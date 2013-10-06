@@ -11,7 +11,7 @@ class Chef::Node
       next if value_or_values.nil? # skip nil values -> support deleting a presetted value
       (value_or_values.kind_of?(Array) ? value_or_values : [ value_or_values ]).each do |value|
         if value.kind_of? TrueClass
-          lines << "#{key}=#{value}"
+          lines << "#{key}"
         elsif value.kind_of? FalseClass
           next
         elsif value == ''
